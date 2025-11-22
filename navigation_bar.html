@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Navigation Bar Menu</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #ececec;
+  margin: 0;
+  padding: 20px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* COMMON LINK ANIMATION */
+a {
+  transition: all 0.3s ease;
+}
+
+/* HORIZONTAL MENU */
+.horizontal-nav {
+  background: #333;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease;
+}
+.horizontal-nav a {
+  float: left;
+  color: rgb(255, 175, 255);
+  text-decoration: none;
+  padding: 14px 20px;
+  position: relative;
+}
+.horizontal-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+.horizontal-nav a:hover::after {
+  width: 100%;
+}
+.horizontal-nav a:hover {
+  background: #444;
+}
+
+/* VERTICAL MENU */
+.vertical-nav {
+  width: 200px;
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 auto 40px;
+  animation: slideIn 0.8s ease;
+}
+.vertical-nav a {
+  display: block;
+  color: rgb(255, 175, 255);
+  text-decoration: none;
+  padding: 14px;
+  transform: translateX(-10px);
+  opacity: 0;
+  animation: linkFade 0.5s ease forwards;
+}
+.vertical-nav a:nth-child(1){animation-delay:0.2s;}
+.vertical-nav a:nth-child(2){animation-delay:0.4s;}
+.vertical-nav a:nth-child(3){animation-delay:0.6s;}
+.vertical-nav a:nth-child(4){animation-delay:0.8s;}
+.vertical-nav a:hover {
+  background: #444;
+  transform: translateX(5px);
+}
+
+/* BURGER MENU */
+.burger-nav {
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease;
+}
+.burger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  color: rgb(150, 159, 238);
+}
+.burger-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  animation: expand 0.4s ease;
+}
+.burger-menu a {
+  color: rgb(255, 175 ,255);
+  padding: 14px 20px;
+  text-decoration: none;
+  transform: translateY(-5px);
+  opacity: 0;
+  animation: linkFade 0.5s ease forwards;
+}
+.burger-menu.active {
+  display: flex;
+}
+.burger-menu a:hover {
+  background: #444;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes slideIn {
+  from {opacity: 0; transform: translateX(-20px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+@keyframes expand {
+  from {opacity: 0; transform: scaleY(0);}
+  to {opacity: 1; transform: scaleY(1);}
+}
+@keyframes linkFade {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- HORIZONTAL NAV -->
+<h2>Horizontal Navigation</h2>
+<nav class="horizontal-nav">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- VERTICAL NAV -->
+<h2>Vertical Navigation</h2>
+<nav class="vertical-nav">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- BURGER NAV -->
+<h2>Burger Menu Navigation</h2>
+<nav class="burger-nav">
+  <div class="burger-header">
+    <span>Lin's Corner</span>
+    <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="burger-menu" id="burgerMenu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<script>
+function toggleMenu() {
+  document.getElementById("burgerMenu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

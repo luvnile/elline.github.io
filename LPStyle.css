@@ -1,0 +1,328 @@
+/* General Page Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #f8fafc, #e0f2fe);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+/* ===== Base Page Styling ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #faf5ff, #e0f2fe);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===== Header / Animated Banner ===== */
+.banner {
+  text-align: center;
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.banner img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* ===== Main Image Section ===== */
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  animation: fadeIn 1.2s ease 0.3s forwards;
+}
+
+.main-image img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.main-image img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Testimonial Section ===== */
+.testimonial {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px 35px;
+  border-radius: 20px;
+  text-align: center;
+  font-style: italic;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 1s ease 0.4s forwards;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* ===== Personal Page Button ===== */
+.personal-page {
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.personal-page a {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  padding: 14px 35px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+.personal-page a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.4);
+}
+
+/* ===== Introduction Section ===== */
+.intro {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
+}
+
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #4c1d95;
+}
+
+.intro p {
+  color: #475569;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* ===== Services Section ===== */
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px 40px 80px 40px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 1.2s forwards;
+}
+
+.service-item {
+  text-align: center;
+  max-width: 280px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.service-item:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.service-item:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-item img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  height: auto;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.service-item img:hover {
+  transform: scale(1.05);
+}
+
+.service-item p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #374151;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(135deg, #4c1d95, #312e81);
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9em;
+  margin-top: 40px;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 1.6s forwards;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Header / Banner */
+.banner {
+  text-align: center;
+  padding: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.banner img:hover {
+  transform: scale(1.05);
+}
+
+/* Main Image */
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.main-image img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial */
+.testimonial {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-style: italic;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Personal Page Button */
+.personal-page {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.personal-page a {
+  background: #2563eb;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.personal-page a:hover {
+  background: #1e40af;
+}
+
+/* Introduction */
+.intro {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.intro p {
+  color: #475569;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px 40px 60px 40px;
+}
+
+.service-item {
+  text-align: center;
+  max-width: 280px;
+}
+
+.service-item img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: auto;
+  width: auto; /* Keeps the original image size */
+}
+
+.service-item p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #374151;
+}
+
+/* Footer */
+footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
